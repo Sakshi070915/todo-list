@@ -1,0 +1,23 @@
+// Filter tasks (show completed/incomplete tasks)
+showCompletedCheckbox.addEventListener('change', () => {
+    displayTasks(); 
+});
+
+// Display Tasks Function (modified to include filtering)
+function displayTasks() {
+    taskList.innerHTML = ''; 
+
+    const showCompleted = showCompletedCheckbox.checked;
+
+    tasks.forEach(task => {
+        if (showCompleted || !task.completed) { 
+            const listItem = createListItem(task); 
+            taskList.appendChild(listItem);
+        }
+    });
+}
+
+// Create reusable list item function (for better code organization)
+function createListItem(task) {
+    // ... (same as in script.js)
+}
